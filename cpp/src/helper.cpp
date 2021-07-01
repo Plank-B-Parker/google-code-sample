@@ -23,3 +23,12 @@ std::vector<std::string> splitlines(std::string output) {
   }
   return commandOutput;
 }
+
+bool compareStringsCaseInsensitive(std::string a, std::string b)
+{
+    std::transform(a.begin(), a.end(), a.begin(), ::tolower);
+    std::transform(b.begin(), b.end(), b.begin(), ::tolower);
+
+    if (a == b) return 1;
+    return 0;
+}

@@ -1,4 +1,5 @@
 #include "videolibrary.h"
+#include "videolibrary.h"
 
 #include <fstream>
 #include <iostream>
@@ -27,6 +28,7 @@ VideoLibrary::VideoLibrary() {
       }
       Video video = Video(trim(std::move(title)), trim(id), std::move(tags));
       mVideos.emplace(trim(std::move(id)), std::move(video));
+      numVids++;
     }
   } else {
     std::cout << "Couldn't find videos.txt" << std::endl;
@@ -42,11 +44,10 @@ std::vector<Video> VideoLibrary::getVideos() const {
 }
 
 const Video* VideoLibrary::getVideo(const std::string& videoId) const {
-  const auto found = mVideos.find(videoId);
-  if (found == mVideos.end()) {
-    std::cout << "Video not found in video library" << std::endl;
-    return nullptr;
-  } else {
-    return &(found->second);
+      const auto found = mVideos.find(videoId);
+      if (found == mVideos.end()) {
+        return nullptr;
+      } else {
+        return &(found->second);
   }
 }

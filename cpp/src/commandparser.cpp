@@ -16,8 +16,10 @@ void CommandParser::executeCommand(const std::vector<std::string>& command) {
 
   if (command[0] == "NUMBER_OF_VIDEOS") {
     mVideoPlayer.numberOfVideos();
+
   } else if (command[0] == "SHOW_ALL_VIDEOS") {
     mVideoPlayer.showAllVideos();
+
   } else if (command[0] == "PLAY") {
     if (command.size() != 2) {
       std::cout << "Please enter PLAY command followed by video_id."

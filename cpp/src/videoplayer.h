@@ -3,6 +3,7 @@
 #include <string>
 
 #include "videolibrary.h"
+#include "PlayListManager.h"
 
 /**
  * A class used to represent a Video Player.
@@ -10,6 +11,9 @@
 class VideoPlayer {
  private:
   VideoLibrary mVideoLibrary;
+  std::string playingVidId = ""; 
+  PlayListManager playlists;
+  bool paused = false;
 
  public:
   VideoPlayer() = default;

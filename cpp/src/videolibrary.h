@@ -14,6 +14,7 @@ class VideoLibrary {
   std::unordered_map<std::string, Video> mVideos;
 
  public:
+	 int numVids = 0;
   VideoLibrary();
 
   // This class is not copyable to avoid expensive copies.

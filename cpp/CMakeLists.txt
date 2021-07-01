@@ -40,29 +40,29 @@ add_library(youtube_lib
     src/videoplayer.cpp
     src/videoplayer.h
     src/videoplaylist.h
-    src/videoplaylist.cpp)
+    src/videoplaylist.cpp "src/Source1.cpp")
 
-add_executable(youtube src/main.cpp)
+add_executable(youtube src/main.cpp "src/Source1.cpp")
 target_link_libraries(youtube youtube_lib)
 
 enable_testing()
 
-add_executable(part1_test test/part1_test.cpp)
+add_executable(part1_test test/part1_test.cpp "src/Source1.cpp")
 target_link_libraries(part1_test youtube_lib gmock gtest gtest_main)
 gtest_discover_tests(part1_test)
 
-add_executable(part2_test test/part2_test.cpp)
+add_executable(part2_test test/part2_test.cpp "src/Source1.cpp")
 target_link_libraries(part2_test youtube_lib gmock gtest gtest_main)
 gtest_discover_tests(part2_test)
 
-add_executable(part3_test test/part3_test.cpp)
+add_executable(part3_test test/part3_test.cpp "src/Source1.cpp")
 target_link_libraries(part3_test youtube_lib gmock gtest gtest_main)
 gtest_discover_tests(part3_test)
 
-add_executable(part4_test test/part4_test.cpp)
+add_executable(part4_test test/part4_test.cpp "src/Source1.cpp")
 target_link_libraries(part4_test youtube_lib gmock gtest gtest_main)
 gtest_discover_tests(part4_test)
 
-add_executable(videolibrary_test test/videolibrary_test.cpp)
+add_executable(videolibrary_test test/videolibrary_test.cpp "src/Source1.cpp")
 target_link_libraries(videolibrary_test youtube_lib gmock gtest gtest_main)
 gtest_discover_tests(videolibrary_test)
